@@ -57,3 +57,21 @@ PT:
 
 - <b>eslint</b>: apenas para desenvolvimento, auxilia na padronização do código, a partir de regras pré-configuradas.
     - <b>@rocketseat/eslint-config</b>: conjunto de regras para o eslint - detalhe que a regra "end of line" foi modificada. 
+
+- <b>dotenv</b>: lib para permitir ler o arquivo .env e usar diretamente as variáveis com process.env
+
+- Database:
+    - <b>sqlite3</b>: para desenvolvimento, driver do banco de dados relacional, de simples implementação
+    - <b>knex</b>: query builder, para auxiliar na criação de queries SQL e abstração do código, para ficar independente de um banco de dados específico.
+    - 
+
+- <b>zod</b>: Ajuda na validação de formulários e formatação de dados.
+
+## Database Schema
+
+O banco de dados possui o seguinte schema:
+- Tabela "Notes"
+    - id: uuid
+    - title: string
+    - body: (optional) string
+    - favourite: boolean
