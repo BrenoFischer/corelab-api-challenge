@@ -1,12 +1,5 @@
-import fastify from "fastify";
 import { env } from "./env";
-import { notesRoutes } from "./routes/notes";
-
-const app = fastify();
-
-app.register(notesRoutes, {
-  prefix: "notes",
-});
+import { app } from "./app";
 
 app
   .listen({

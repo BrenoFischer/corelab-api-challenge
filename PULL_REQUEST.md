@@ -67,11 +67,40 @@ PT:
 
 - <b>zod</b>: Ajuda na validação de formulários e formatação de dados.
 
-## Database Schema
+- <b>vitest</b>: apenas em desenvolvimento, framework para auxiliar na criação de testes
 
+- <b>supertest</b>: apenas em desenvolvimento, possibilita realizar requisições sem colocar o servidor rodando, para fins de testes.
+
+## Database
+
+### Schema
+
+PT:
 O banco de dados possui o seguinte schema:
 - Tabela "Notes"
     - id: uuid
     - title: string
     - body: (optional) string
     - favourite: boolean
+
+## Rotas
+
+PT:
+- <b>/notes</b>
+    - POST: inserir no banco de dados nova note com um title, favourite, body (optional)
+    - GET: retorna todas as notes do banco de dados
+    
+- <b>/notes/:id</b>
+        - GET: retorna uma note caso o id esteja presente no banco de dados
+
+
+## Testes / Tests
+
+PT: Os testes foram criados com auxílio do framework Vitest, dentro da pasta /test.
+
+### Ponta a ponta / End to end
+
+PT:
+- Cenários de teste:
+    
+
