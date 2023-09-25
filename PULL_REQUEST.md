@@ -71,6 +71,8 @@ PT:
 
 - <b>supertest</b>: apenas em desenvolvimento, possibilita realizar requisições sem colocar o servidor rodando, para fins de testes.
 
+- <b>tsup</b>: apenas em desenvolvimento, auxilia na conversão do código TS para JS, visando criar a build do projeto
+
 ## Database
 
 ### Schema
@@ -102,5 +104,8 @@ PT: Os testes foram criados com auxílio do framework Vitest, dentro da pasta /t
 
 PT:
 - Cenários de teste:
+    - adicionar note no banco de dados
+    - listar todas as notes
+    - listar uma note específica 
     
 

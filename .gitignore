@@ -81,6 +81,7 @@ typings/
 # Nuxt.js build / generate output
 .nuxt
 dist
+build
 
 # Gatsby files
 .cache/
@@ -101,7 +102,7 @@ dist
 .dynamodb/
 
 # DB files
-db/app.db
+db/*.db
 
 # TernJS port file
 .tern-port
