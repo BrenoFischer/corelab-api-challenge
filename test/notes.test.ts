@@ -24,7 +24,7 @@ describe("Notes routes", () => {
         title: "New note test",
         body: "Note body",
         favourite: false,
-        color: "#FFF",
+        color: "white",
       })
       .expect(201);
   });
@@ -43,7 +43,7 @@ describe("Notes routes", () => {
         title: "New note test",
         body: "Note body",
         favourite: 0,
-        color: "#FFF",
+        color: "white",
       }),
     ]);
   });
@@ -68,7 +68,7 @@ describe("Notes routes", () => {
         title: "New note test",
         body: "Note body",
         favourite: 0,
-        color: "#FFF",
+        color: "white",
       }),
     );
   });
@@ -92,7 +92,7 @@ describe("Notes routes", () => {
       title: "New note test",
       body: "Note body",
       favourite: false,
-      color: "#FFF",
+      color: "white",
     });
 
     const listNotesReponse = await request(app.server)

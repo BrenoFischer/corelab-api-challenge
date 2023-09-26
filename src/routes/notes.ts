@@ -36,7 +36,7 @@ export async function notesRoutes(app: FastifyInstance) {
       title,
       body,
       favourite,
-      color: "#FFF",
+      color: "white",
     });
 
     return reply.status(201).send();
