@@ -52,4 +52,31 @@ export async function notesRoutes(app: FastifyInstance) {
 
     return reply.status(202).send();
   });
+
+  app.patch("/:id", async (request, reply) => {
+    const getNoteParamsSchema = z.object({
+      id: z.string().uuid(),
+    });
+
+    const createNoteBodySchema = z.object({
+      title: z.string(),
+      body: z.string(),
+      favourite: z.boolean(),
+      color: z.string(),
+    });
+
+    const { id } = getNoteParamsSchema.parse(request.params);
+    const { title, body, favourite, color } = createNoteBodySchema.parse(
+      request.body,
+    );
+
+    await knex("notes").where("id", id).update({
+      title,
+      body,
+      favourite,
+      color,
+    });
+
+    return reply.status(204).send();
+  });
 }
