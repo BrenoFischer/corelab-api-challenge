@@ -52,6 +52,7 @@ PT:
 - <b>Node.js ^16.15.0</b> (ferramenta obrigatória)
     - <b>tsx</b>: apenas para desenvolvimento, auxilia na conversão de TS para JS, pois Node não suporta TS nativamente .
     - <b>Fastify</b>: como micro-framework, para auxilizar na criação de rotas.
+    - <b>@fastify/cors</b>: permite escrever regras para Cross Origin Resource Sharing, ou seja, para comunicação entre client e api com domínios diferentes.
 
 - <b>NPM ^8.5.5</b>: como gerenciador de pacotes.
 
