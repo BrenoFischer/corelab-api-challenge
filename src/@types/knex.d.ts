@@ -7,6 +7,7 @@ declare module "knex/types/tables" {
       title: string;
       body: string;
       favourite: boolean;
+      color: string;
     };
   }
 }

@@ -20,7 +20,12 @@ describe("Notes routes", () => {
   it("should be able to create a new note", async () => {
     await request(app.server)
       .post("/notes")
-      .send({ title: "New note test", body: "Note body", favourite: false })
+      .send({
+        title: "New note test",
+        body: "Note body",
+        favourite: false,
+        color: "#FFF",
+      })
       .expect(201);
   });
 
@@ -38,6 +43,7 @@ describe("Notes routes", () => {
         title: "New note test",
         body: "Note body",
         favourite: 0,
+        color: "#FFF",
       }),
     ]);
   });
@@ -62,6 +68,7 @@ describe("Notes routes", () => {
         title: "New note test",
         body: "Note body",
         favourite: 0,
+        color: "#FFF",
       }),
     );
   });
