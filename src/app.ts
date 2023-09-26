@@ -9,5 +9,5 @@ app.register(notesRoutes, {
 });
 
 app.register(cors, {
-  origin: false,
+  origin: true,
 });
