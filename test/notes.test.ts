@@ -65,4 +65,18 @@ describe("Notes routes", () => {
       }),
     );
   });
+
+  it("should be able to delete a specific note", async () => {
+    await request(app.server)
+      .post("/notes")
+      .send({ title: "New note test", body: "Note body", favourite: false });
+
+    const listNotesReponse = await request(app.server)
+      .get("/notes")
+      .expect(200);
+
+    const noteId = listNotesReponse.body.notes[0].id;
+
+    await request(app.server).delete(`/notes/${noteId}`).expect(202);
+  });
 });

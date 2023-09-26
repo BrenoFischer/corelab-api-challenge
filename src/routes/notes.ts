@@ -40,4 +40,15 @@ export async function notesRoutes(app: FastifyInstance) {
 
     return reply.status(201).send();
   });
+
+  app.delete("/:id", async (request, reply) => {
+    const getNoteParamsSchema = z.object({
+      id: z.string().uuid(),
+    });
+
+    const { id } = getNoteParamsSchema.parse(request.params);
+    await knex("notes").where("id", id).del();
+
+    return reply.status(202).send();
+  });
 }
