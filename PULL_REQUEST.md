@@ -74,6 +74,31 @@ PT:
 
 - <b>tsup</b>: apenas em desenvolvimento, auxilia na conversão do código TS para JS, visando criar a build do projeto
 
+EN:
+- **<b>Node.js ^16.15.0</b>** (mandatory tool)
+  - **<b>tsx</b>**: for development only, helps in converting TS to JS since Node does not natively support TS.
+  - **<b>Fastify</b>**: as a micro-framework, to assist in creating routes.
+  - **<b>@fastify/cors</b>**: allows writing rules for Cross Origin Resource Sharing (CORS) for communication between client and API with different domains.
+
+- **<b>NPM ^8.5.5</b>**: as the package manager.
+
+- **<b>eslint</b>**: for development only, assists in code standardization based on pre-configured rules.
+  - **<b>@rocketseat/eslint-config</b>**: set of rules for eslint - note that the "end of line" rule was modified.
+
+- **<b>dotenv</b>**: a library to allow reading the .env file and directly using the variables with process.env.
+
+- **Database**:
+  - **<b>sqlite3</b>**: for development, a driver for the relational database, easy to implement.
+  - **<b>knex</b>**: query builder, to assist in creating SQL queries and abstracting the code, to be independent of a specific database.
+
+- **<b>zod</b>**: Helps in form validation and data formatting.
+
+- **<b>vitest</b>**: for development only, a framework to assist in creating tests.
+
+- **<b>supertest</b>**: for development only, allows making requests without running the server, for testing purposes.
+
+- **<b>tsup</b>**: for development only, assists in converting TS code to JS, aiming to create the project's build.
+
 ## Database
 
 ### Schema
@@ -85,8 +110,18 @@ O banco de dados possui o seguinte schema:
     - title: string
     - body: (optional) string
     - favourite: boolean
+    - color: string
 
-## Rotas
+EN:
+The dataset has the following schema:
+- "Notes" Table
+    - id: uuid
+    - title: string
+    - body: (optional) string
+    - favourite: boolean
+    - color: string
+
+## Rotas / Routes
 
 PT:
 - <b>/notes</b>
@@ -95,18 +130,53 @@ PT:
     
 - <b>/notes/:id</b>
         - GET: retorna uma note caso o id esteja presente no banco de dados
+        - DELETE: deleta uma note a partir de um id
+        - PATCH: atualiza uma note, a partir de um id e um JSON
 
+----
+
+EN: 
+- **<b>/notes</b>**
+  - **POST**: Insert a new note into the database with a title, favorite status, and optional body
+  - **GET**: Retrieve all notes from the database
+
+- **<b>/notes/:id</b>**
+  - **GET**: Retrieve a note if the ID is present in the database
+  - **DELETE**: Delete a note based on an ID
+  - **PATCH**: Update a note based on an ID and a JSON payload
 
 ## Testes / Tests
 
 PT: Os testes foram criados com auxílio do framework Vitest, dentro da pasta /test.
 
+Vale ressaltar que outros testes seriam cruciais, como tratamento de erros, testes unitários e testes de integração.
+Como o tempo não foi suficiente, os testes deverão ser implementados posteriormente.
+
+----
+
+EN: 
+The tests were created with the help of the Vitest framework, inside the /test folder.
+
+It's worth noting that other tests would be crucial, such as error handling, unit tests, and integration tests. Due to a lack of time, these tests will need to be implemented at a later time.
+
 ### Ponta a ponta / End to end
 
 PT:
 - Cenários de teste:
-    - adicionar note no banco de dados
-    - listar todas as notes
-    - listar uma note específica 
+    - Criar uma note
+    - Buscar todas as notes
+    - Buscar uma note específica
+    - Deletar uma note específica
+    - Editar uma note específica
+
+----
+
+EN:
+- Test scenarios:
+    - Create a note
+    - Get all notes
+    - Get a specific note
+    - Delete a specific note
+    - Edit a specific note
     
 
